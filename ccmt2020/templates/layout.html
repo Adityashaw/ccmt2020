@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            {% block title %}CCMT{% endblock %}
+        </title>
+        <link rel="stylesheet" href={{ url_for('static', filename='css/bootstrap.min.css') }}>
+        <link rel="stylesheet" href={{ url_for('static', filename='css/style.scss.css') }}>
+    </head>
+    <body>
+        {% block navbar %}
+
+        {% include 'nav.html' %}
+
+        {% endblock %}
+        <h5> All data fetched from </h5>
+        <ul>
+            <li> <a href="https://gist.github.com/satish876/adc7164a111ca1c48d4b44ced95c0ad7"> ccmt 2020 college wise</a> </li>
+            <li> <a href="https://gist.github.com/satish876/368d98ac3a1f5e7d2de591b0b603098b"> ccmt 2020 course wise</a> </li>
+        </ul>
+        {% block body %}
+        {% endblock %}
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src={{ url_for('static', filename='js/bootstrap.bundle.min.js') }}></script>
+    </body>
+</html>

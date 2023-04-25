@@ -1,0 +1,64 @@
+h1, h2, h3,
+h4, h5, h6 {
+  color: #326688; }
+
+body {
+  position: relative; }
+
+.primary-gradient {
+  background: linear-gradient(40deg, #326688, #10b4b0) !important; }
+
+.table-caption-top {
+  caption-side: top;
+  text-align: center; }
+
+.primary-color-text {
+  color: #326688; }
+
+.secondary-color-text {
+  color: #10b4b0; }
+
+.btn-primary {
+  background-color: #326688; }
+  .btn-primary:hover {
+    background-color: #225658; }
+
+.clickable {
+  cursor: pointer; }
+  .clickable:hover {
+    background-color: #c0c0c0 !important; }
+
+.legend-bar {
+  padding: 0.2rem 0.5rem;
+  text-align: center;
+  font-size: 90%;
+  position: relative; }
+  .legend-bar::before, .legend-bar::after {
+    position: absolute;
+    content: '';
+    height: 33%;
+    top: 33%; }
+  .legend-bar::before {
+    border-left: 1px solid #dee2e6;
+    left: 0; }
+  .legend-bar::after {
+    border-right: 1px solid #dee2e6;
+    right: 0; }
+
+.custom-range::-moz-range-thumb {
+  background-color: #10b4b0; }
+
+.stars {
+  position: relative;
+  display: inline-block; }
+  .stars::before {
+    content: '\2606\2606\2606\2606\2606'; }
+  .stars::after {
+    content: '\2605\2605\2605\2605\2605';
+    position: absolute;
+    left: 0;
+    overflow: hidden;
+    width: var(--w, 50%);
+    color: #326688; }
+
+/*# sourceMappingURL=style.scss.css.map */

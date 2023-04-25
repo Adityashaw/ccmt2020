@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{%block title %}
+CCMT 2020 Cut Off College-wise
+{% endblock %}
+
+{% block body %}
+{% with messages = get_flashed_messages(with_categories=true) %}
+{% for category, message in messages %}
+<div class="alert alert-{{ category }}">
+    <span>{{ message }}</span>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+
+{% endfor %}
+{% endwith %}
+
+{% if data %}
+<!--<div class="table-responsive">-->
+<table class="table table-striped">
+    <thead class="thead-light">
+        <tr>
+            <th class="w-25"> College </th>
+            <th > Rest Details </th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for colleges in data %}
+            {% for college, courses in colleges.items() %}
+            <tr>
+            <td ><p style="word-wrap: anywhere;">{{ college }}</p></td>
+            <td>
+            <table class="table table-sm small">
+                <thead>
+                    <tr>
+                        <th> Course </th>
+                        <th> Open </th>
+                        <th> EWS </th>
+                        <th> OBC </th>
+                        <th> SC </th>
+                        <th> ST </th>
+                    </tr>
+                </thead>
+            <tbody>
+                    {% for course, scores in courses.items() %}
+                    <tr> <td><p style="word-wrap: anywhere;">{{ course }} </p></td>
+                    <td>{% if scores.get('OPEN') %} {{ scores.get('OPEN').get('score') }} {% endif %}</td>
+                    <td>{% if scores.get('EWS') %} {{ scores.get('EWS').get('score') }} {% endif %}</td>
+                    <td>{% if scores.get('OBC') %} {{ scores.get('OBC').get('score') }} {% endif %}</td>
+                    <td>{% if scores.get('SC') %} {{ scores.get('SC').get('score') }} {% endif %}</td>
+                    <td>{% if scores.get('ST') %} {{ scores.get('ST').get('score') }} {% endif %}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            </td>
+            </tr>
+            {% endfor %}
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endif %}
+{% endblock %}
